@@ -8,29 +8,22 @@ tiempo_cruce = {'A': 1, 'B': 2, 'C': 5, 'D': 10}
 tiempo_cruce = dict(sorted(tiempo_cruce.items(), key=lambda item: item[1]))
 
 # La ecuacion matematica que da la solucion (tiempo minimo) es:
-# min( min(B + A + C + A + D, B + A + D + B + B),
-#      min(2A + B + C + D, A + 3B + D) )
-# la cual, traducido a codigo, es la siguiente:
+# min( 2A + B + C + D , A + 3B + D )
 tiempo_minimo_formula = min(
-    min(
-        tiempo_cruce['B'] + tiempo_cruce['A'] + tiempo_cruce['C'] + tiempo_cruce['A'] + tiempo_cruce['D'],
-        tiempo_cruce['B'] + tiempo_cruce['A'] + tiempo_cruce['D'] + tiempo_cruce['B'] + tiempo_cruce['B']
-    ),
-    min(
-        2*tiempo_cruce['A'] + tiempo_cruce['B'] + tiempo_cruce['C'] + tiempo_cruce['D'],
-        tiempo_cruce['A'] + 3*tiempo_cruce['B'] + tiempo_cruce['D']
-    )
+    2*tiempo_cruce['A'] + tiempo_cruce['B'] + tiempo_cruce['C'] + tiempo_cruce['D'],
+    tiempo_cruce['A'] + 3*tiempo_cruce['B'] + tiempo_cruce['D']
 )
 
-# Escenarios posibles de la ecuacion con su secuencia de cruces
+# Escenarios posibles
 escenarios = [
-    [('A','B'), 'A', ('C','D'), 'B', ('A','B')],
-    [('A','B'), 'A', ('A','D'), 'B', ('B','C')],
+    # Caso 1: B + A + C + A + D  == 2A + B + C + D
     [('A','B'), 'A', ('A','C'), 'A', ('A','D')],
-    [('A','B'), 'B', ('B','C'), 'B', ('B','D')]
+
+    # Caso 2: B + A + D + B + B  == A + 3B + D
+    [('A','B'), 'A', ('C','D'), 'B', ('A','B')],
 ]
 
-# Calcular tiempo de cada escenario para imprimir el mejor
+# Calculando el tiempo de cada escenario
 def calcular_tiempo(secuencia):
     tiempo_total = 0
     registro_cruces = []
@@ -45,14 +38,9 @@ def calcular_tiempo(secuencia):
             tiempo_total += t
     return tiempo_total, registro_cruces
 
-# Comparamos el tiempo de cada escenario e imprimimos el mejor
-tiempo_minimo = None
-registro_optimo = []
-
+# Comparando el escenario con la formula, imprimir los pasos de dicho escenario
 for secuencia in escenarios:
     tiempo_total, registro_cruces = calcular_tiempo(secuencia)
-    if tiempo_minimo is None or tiempo_total < tiempo_minimo:
-        tiempo_minimo = tiempo_total
-        registro_optimo = registro_cruces
-
-print("; ".join(registro_optimo) + f". Total = {tiempo_minimo}.")
+    if tiempo_total == tiempo_minimo_formula:
+        print("; ".join(registro_cruces) + f". Total = {tiempo_total}.")
+        break
