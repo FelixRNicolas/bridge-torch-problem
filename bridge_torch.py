@@ -25,9 +25,9 @@ tiempo_minimo_formula = min(
 # Escenarios posibles de la ecuacion con su secuencia de cruces
 escenarios = [
     [('A','B'), 'A', ('C','D'), 'B', ('A','B')],
-    [('A','B'), 'A', ('A','D'), 'B', ('B','B')],
+    [('A','B'), 'A', ('A','D'), 'B', ('B','C')],
     [('A','B'), 'A', ('A','C'), 'A', ('A','D')],
-    [('A','B'), 'B', ('A','B'), 'B', ('B','D')]
+    [('A','B'), 'B', ('B','C'), 'B', ('B','D')]
 ]
 
 # Calcular tiempo de cada escenario para imprimir el mejor
