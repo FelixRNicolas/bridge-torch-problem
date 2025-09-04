@@ -1,13 +1,13 @@
 # The Bridge and Torch Problem
-A simple solution for "The Bridge and Torch" logic puzzle using Python.
+A simple solution for "The Bridge and Torch" logic puzzle using Python (mathematical approach) and C++ (brute forcing).
 
 # About the problem.
 *"Four people come to a river in the night. There is a narrow bridge, and it can only hold two people at a time. They have one torch and, because it's night, the torch has to be used when crossing the bridge. When two people cross the bridge together, they must move at the slower person's pace. One person has to return with the torch."* [- Source](https://en.wikipedia.org/wiki/Bridge_and_torch_problem)
 
 The crossing time for each individual **may vary**, but overall we are looking for the optimal crossing time for a determined set of people.
 
-# About the program
-This program utilizes the following mathematical implementation to determine the optimal crossing time, as well as the combination of *"crossings"* or *"steps"* to follow in order to achieve the final time:
+# About the Python program
+This approach utilizes the following mathematical implementation to determine the optimal crossing time, as well as the combination of *"crossings"* or *"steps"* to follow in order to achieve the final time:
 
 $When: A<B<C<D:$
 <p align="center"> $min(2A + B + C + D, A + 3B + D)$ </p>
