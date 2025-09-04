@@ -1,17 +1,17 @@
-# The Bridge and Torch Problem
-A simple solution for "The Bridge and Torch" logic puzzle using Python (mathematical approach) and C++ (brute forcing).
+# Bridge and Torch Problem 
+Una solución simple para el acertijo lógico "El Puente y la Antorcha" usando Python (enfoque matemático) y C++ (fuerza bruta).
 
-# About the problem.
-*"Four people come to a river in the night. There is a narrow bridge, and it can only hold two people at a time. They have one torch and, because it's night, the torch has to be used when crossing the bridge. When two people cross the bridge together, they must move at the slower person's pace. One person has to return with the torch."* [- Source](https://en.wikipedia.org/wiki/Bridge_and_torch_problem)
+# Acerca del problema
+*"Cuatro personas llegan a un río en la noche. Hay un puente angosto, y solo puede soportar a dos personas a la vez. Tienen una antorcha y, como es de noche, la antorcha debe usarse al cruzar el puente. Cuando dos personas cruzan el puente juntas, deben avanzar al ritmo de la persona más lenta. Una persona tiene que regresar con la antorcha."* [- Fuente](https://en.wikipedia.org/wiki/Bridge_and_torch_problem)
 
-The crossing time for each individual **may vary**, but overall we are looking for the optimal crossing time for a determined set of people.
+El tiempo de cruce para cada individuo **puede variar**, pero en general buscamos el tiempo de cruce óptimo para un conjunto determinado de personas.
 
-# About the Python program
-This approach utilizes the following mathematical implementation to determine the optimal crossing time, as well as the combination of *"crossings"* or *"steps"* to follow in order to achieve the final time:
+# Acerca del programa en Python
+Este enfoque utiliza la siguiente implementación matemática para determinar el tiempo de cruce óptimo, así como la combinación de *"cruces"* o *"pasos"* a seguir para lograr el tiempo final:
 
-$When: A<B<C<D:$
+$Cuando: A<B<C<D:$
 <p align="center"> $min(2A + B + C + D, A + 3B + D)$ </p>
 
-To keep it brief, ths equation represents the two (canonically) best ***"crossing strategies"***. Since there are several ways to send and bring back the lantern, the possible best routes are compared, and the one with the shortest time is chosen, thus avoiding checking all possible combinations and outcomes, since most, if not all of them, will yield higher times.
+En resumen, esta ecuación representa las dos ***"estrategias de cruce"*** (canónicas) más eficientes. Dado que hay varias formas de enviar y traer de vuelta la antorcha, se comparan las posibles mejores rutas, y se elige la de menor tiempo, evitando así revisar todas las combinaciones y resultados posibles, ya que la mayoría, si no todas, producirán tiempos más altos.
 
-**TL;DR:** This program looks at all the known best strategies and sticks with the most efficient one.
+**TL;DR:** Este programa revisa todas las estrategias conocidas más eficientes y se queda con la más óptima.
