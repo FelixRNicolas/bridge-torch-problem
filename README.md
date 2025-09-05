@@ -15,3 +15,6 @@ $Cuando: A<B<C<D:$
 En resumen, esta ecuación representa las dos ***"estrategias de cruce"*** (canónicas) más eficientes. Dado que hay varias formas de enviar y traer de vuelta la antorcha, se comparan las posibles mejores rutas, y se elige la de menor tiempo, evitando así revisar todas las combinaciones y resultados posibles, ya que la mayoría, si no todas, producirán tiempos más altos.
 
 **TL;DR:** Este programa revisa todas las estrategias conocidas más eficientes y se queda con la más óptima.
+
+# Acerca del programa en c++
+En este codigo buscamos una comparacion de todos los tiempos totales podibles , calculando el tiempo y asignandolo en una variable para comparar entre ellos si el programa tiene un tiempo menor al que se este ejecuntando dejade seguir el proceso y empieza otro hasta encontar el mejor tiempo
